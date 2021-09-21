@@ -1,0 +1,7 @@
+login: admin
+email: qqq@qq.qq
+passwd: admin
+
+
+login: Alex
+passwd: zaq12wsxcde3
