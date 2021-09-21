@@ -1,4 +1,5 @@
 login: admin
+email: qqq@qq.qq
 passwd: admin
 
 
