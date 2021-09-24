@@ -4,4 +4,5 @@ passwd: admin
 
 
 login: Alex
+email: www@ww.ww
 passwd: zaq12wsxcde3
