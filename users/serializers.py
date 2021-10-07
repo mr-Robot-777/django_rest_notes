@@ -9,5 +9,6 @@ class UserModelSerializer(HyperlinkedModelSerializer):
         #  fields = ('username', 'firstname', 'lastname', 'email')
         # fields = '__all__'
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email')
+        fields = ('id', 'url', 'username', 'first_name', 'last_name', 'email')
+        # fields = ('username', 'first_name', 'last_name', 'email')
         # fields = '__all__'
