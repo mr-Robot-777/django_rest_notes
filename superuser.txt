@@ -6,3 +6,18 @@ passwd: admin
 login: Alex
 email: www@ww.ww
 passwd: zaq12wsxcde3
+
+
+login: Test1
+email: eee@ee.ee
+passwd: zaq12wsxcde3
+
+
+login: Test2
+email: rrr@rr.rr
+passwd: zaq12wsxcde3
+
+
+login: Test3
+email: ttt@tt.tt
+passwd: zaq12wsxcde3
