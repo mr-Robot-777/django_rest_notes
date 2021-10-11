@@ -10,7 +10,7 @@ passwd: zaq12wsxcde3
 
 login: Test1
 email: eee@ee.ee
-passwd: zaq12wsxcde3
+passwd: Zaq12wsxcde3
 
 
 login: Test2

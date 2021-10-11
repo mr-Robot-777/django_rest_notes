@@ -20,6 +20,7 @@ class ProjectFilter(filters.FilterSet):
         model = Project
         fields = ['name']
 
+
 class ProjectModelViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectModelSerializer
@@ -44,10 +45,9 @@ class TodoModelViewSet(ModelViewSet):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-
 def test_token(request):
     response = requests.post('http://127.0.0.1:8000/api-token-auth/',
-                             data={'username': 'test_token',
-                                   'password': 'token123'})
+                             data={'username': 'Alex',
+                                   'password': 'zaq12wsxcde3'})
     html = "<html><body>token= %s.</body></html>" % response.json()
     return HttpResponse(html)
