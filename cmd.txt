@@ -6,3 +6,5 @@ python manage.py runserver
 cd notes/frontend
 npm run start
 ######################################
+python manage.py test
+######################################
