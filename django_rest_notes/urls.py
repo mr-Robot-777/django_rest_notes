@@ -22,7 +22,8 @@ from todo.views import ProjectModelViewSet, TodoModelViewSet, test_token
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
-
+from graphene_django.views import GraphQLView
+from django.views.decorators.csrf import csrf_exempt
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -42,19 +43,21 @@ router.register('projects', ProjectModelViewSet)
 router.register('todos', TodoModelViewSet)
 
 urlpatterns = [
-   # path('admin/', admin.site.urls),
-   # path('api-auth/', include('rest_framework.urls')),
-   # path('api/', include(router.urls), name="api"),
-   # path('api-token-auth/', views.obtain_auth_token),
-   # path('test_token/', test_token)
+    # path('admin/', admin.site.urls),
+    # path('api-auth/', include('rest_framework.urls')),
+    # path('api/', include(router.urls), name="api"),
+    # path('api-token-auth/', views.obtain_auth_token),
+    # path('test_token/', test_token)
 
-   path('admin/', admin.site.urls),
-   path('api-auth/', include('rest_framework.urls')),
-   path('api/', include(router.urls), name="api"),
-   path('api-token-auth/', views.obtain_auth_token),
-   path('test_token/', test_token),
-   re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-   path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-   path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/', include(router.urls), name="api"),
+    path('api-token-auth/', views.obtain_auth_token),
+    path('test_token/', test_token),
+    re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path("graphql-test/", GraphQLView.as_view(graphiql=True)),
+    path("graphql/", csrf_exempt(GraphQLView.as_view(graphiql=False))),
 
 ]
