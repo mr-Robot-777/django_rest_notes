@@ -4,7 +4,7 @@ from .models import Project, Todo
 from users.serializers import UserModelSerializer
 
 class ProjectModelSerializer(ModelSerializer):
-    users = serializers.StringRelatedField(many=True)
+    # users = serializers.StringRelatedField(many=True) # закомитил для дз 11
 
     class Meta:
         model = Project
@@ -13,9 +13,8 @@ class ProjectModelSerializer(ModelSerializer):
 
 
 class ProjectModelSerializerShort(ModelSerializer):
-
     users = serializers.StringRelatedField(many=True)
-    # users = UserModelSerializer(many=True)
+    users = UserModelSerializer(many=True)
 
     class Meta:
         model = Project
@@ -24,8 +23,8 @@ class ProjectModelSerializerShort(ModelSerializer):
 
 
 class TodoModelSerializer(ModelSerializer):
-    user = UserModelSerializer()
-    project = ProjectModelSerializer()
+    # user = UserModelSerializer() # закомитил для дз 11
+    # project = ProjectModelSerializer() # закомитил для дз 11
 
     class Meta:
         model = Todo
